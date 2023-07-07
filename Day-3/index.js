@@ -1,11 +1,12 @@
-function submitData() {
+function submitData(req, res) {
     // alert("Hello students")
     var name = document.getElementById("xyz").value;
     console.log(name, "- name")
-    var password  = document.getElementById("xyz").value ;
-    if(password.length < 9){
+    var password = document.getElementById("xyz").value;
+    if (password.length < 9) {
         return res.send("Password shgould be 8 digit ")
     }
-    console.log(password,"- password")
+    console.log(password, "- password")
+    return res.json({ status: 200, message: "Registration Complegte.." })
 
 }
