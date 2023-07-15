@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://kit.fontawesome.com/d4fa596027.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swaraj Jadhav</title>
@@ -13,20 +14,21 @@
         }
 
         #screen {
-            border: 5px solid blue;
             width: 100%;
             height: 2000px;
+            background-color: #f5f5f5;
             /* background-image: url("https://as1.ftcdn.net/v2/jpg/03/18/60/62/1000_F_318606217_Hk8jo2MVoI33SQOkYrfOF929J7JgIP0P.jpg"); */
         }
 
         #navbar {
             width: 70%;
-            border: 5px solid green;
+            /* border: 5px solid green; */
             height: 70px;
             margin: auto;
             display: flex;
             justify-content: space-between;
             color: black;
+            background-color: white;
         }
 
         .padding-10 {
@@ -49,14 +51,16 @@
         #home {
             width: 70%;
             margin: auto;
-            border: 5px solid red;
+            /* border: 5px solid red; */
             height: 600px;
             color: black;
             text-align: center;
+            background-color: white;
+            margin-top: 10px;
         }
 
         #home div {
-            margin-top: 150px;
+            padding-top: 150px;
         }
 
         #home div h1 {
@@ -65,6 +69,72 @@
 
         #home div h3 {
             font-size: 44px;
+        }
+
+        #about {
+            width: 70%;
+            margin: auto;
+            /* border: 2px solid black; */
+            box-shadow: 0px 0px 4px gray;
+            height: 450px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: white;
+        }
+
+        #about-left {
+            width: 42%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-evenly;
+            height: 60%;
+            margin-top: 80px;
+        }
+
+        #about-right {
+            width: 42%;
+            /* border: 2px solid red; */
+            margin-top: 80px;
+        }
+
+        .w-42 {
+            width: 42%;
+            /* border: 1px solid black; */
+        }
+
+        .fs-16 {
+            font-size: 24px;
+        }
+
+        .mb-20 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid black; */
+            width: 45%;
+            height: 40px;
+            padding-top: 13px;
+        }
+
+        #icons div {
+            border: 4px solid #0078ff;
+            width: 32px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 10px;
+            padding-top: 15px;
+        }
+
+        #icons div:hover {
+            background-color: #0078ff;
+            color: white;
+            border: 4px solid rgb(197, 195, 195);
         }
     </style>
 </head>
@@ -92,7 +162,37 @@
             </div>
         </div>
         <div id="about">
-
+            <div id="about-left">
+                <div class="w-42">
+                    <img style="width: 100%; height: 70%; border-radius: 10px;" src="./../images/BEAN2.avif" />
+                </div>
+                <div class="w-42">
+                    <p class="fs-16 mb-20"><b>Name :</b> Bean</p>
+                    <p class="mb-20"><b>Profile :</b> IM nft.</p>
+                    <p class="mb-20"><b>Email :</b> bean@gmail.com</p>
+                    <p class="mb-20"><b>Phone :</b> 0987654321</p>
+                </div>
+            </div>
+            <div id="about-right">
+                <h1>About me</h1>
+                <div style="border: 2px solid #0078ff; width: 34%;"></div>
+                <p style="color: #8988a9; font-size: 18px; margin-top: 25px;">A passionate Full Stack web Developer 🚀
+                    having an experience of building Web applications with
+                    JavaScript / ReactJs / Node.js / MongoDB and some other libraries and frameworks</p>
+                <button
+                    style="background-color: #0078ff; color: white; border: none; width: 150px; height: 35px; font-size: 20px; margin-top: 20px;">Resume</button>
+                <div id="icons">
+                    <div>
+                        <i class="fa-brands fa-twitter fa-2xl"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-github fa-2xl"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="skills">
 
