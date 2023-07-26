@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            justify-content: space-between;
+            width: 100%;
+            background-color: aqua;
+        }
+
+        #parent>div {
+            width: 30%;
+            height: 300px;
+            border: 5px solid red;
+        }
+
+        /* mobile design */
+        @media screen and (max-width : 450px) {
+
+            /* It'll apply css upto 450px */
+            /* max-width - upto  */
+            /* min-width - start from  */
+            #parent {
+                background-color: blueviolet;
+                flex-direction: column;
+                /* flex-direction: column-reverse; */
+                font-size: 60px;
+                color: white;
+                text-align: center;
+            }
+
+            #parent div {
+                width: 100%;
+                height: 500px;
+                border: 5px solid black;
+            }
+        }
+
+        /* tablet view */
+        @media screen and (min-width : 451px) and (max-width : 850px) {
+            #parent {
+                background-color: brown;
+                flex-direction: column-reverse;
+                font-size: 60px;
+                color: white;
+                text-align: center;
+                justify-content: center;
+            }
+
+            #parent div {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div>1 First</div>
+        <div>2</div>
+        <div>3 Third</div>
+        <div>4 Fourth</div>
+    </div>
+
+</body>
+
+</html>
