@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grandParent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        /* when we use > symbol, it'll apply css only for children */
+        #grandParent>div {
+            border: 5px solid red;
+            width: 22%;
+            height: 200px;
+        }
+
+        /* All related elements */
+        /* #grandParent div {
+            border: 5px solid red;
+            width: 300px;
+        } */
+
+        #grandParent>div:nth-child(3)>div {
+            border: 2px solid black;
+            height: 48px;
+        }
+
+        #grandParent>div:nth-child(3)>div:nth-child(4) {
+            display: flex;
+        }
+
+        #grandParent>div:nth-child(3)>div:nth-child(4)>div {
+            border: 3px solid purple;
+        }
+
+        /* max-width - upto  */
+        /* min-width - start from  */
+        @media screen and (min-width : 350px) and (max-width : 450px) {
+            #grandParent {
+                flex-direction: column;
+            }
+
+            #grandParent>div {
+                width: 100%;
+                border: 5px solid blue;
+            }
+
+            #grandParent>div:nth-child(3) {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #grandParent>div:nth-child(3)>div {
+                height: 100%;
+            }
+
+            #grandParent>div:nth-child(3)>div:nth-child(3) {
+                display: none;
+            }
+
+            #grandParent>div:nth-child(3)>div:nth-child(2) {
+                display: none;
+            }
+
+            #grandParent>div:nth-child(2) {
+                display: none;
+            }
+
+            #grandParent>div:nth-child(3)>div:nth-child(4) {
+                flex-direction: column;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="grandParent">
+        <div>1 - Children</div>
+        <div>2 - Children - target</div>
+        <div>
+            <div>1 Grand Children</div>
+            <div>2 Grand Children</div>
+            <div>3 Grand Children - hide</div>
+            <div>
+                <div>1 Great Grand Children</div>
+                <div>2 Great Grand Children</div>
+            </div>
+        </div>
+        <div>4 - Children</div>
+    </div>
+</body>
+
+</html>

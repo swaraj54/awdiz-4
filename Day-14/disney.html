@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bars {
+            display: none;
+        }
+
+        #nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 12px;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width : 450px) {
+            #nav {
+                display: none;
+            }
+
+            #bars {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: left; font-size: 50px; width: 100%;">
+        <div id="bars">Bars</div>
+        <div style="width: 30%; display: flex; justify-content: space-around; ">
+            <div id="logo">Disney</div>
+            <div id="nav">
+                <div>SHOP</div>
+                <div>PARKS</div>
+                <div>WAHT'S NEW</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
