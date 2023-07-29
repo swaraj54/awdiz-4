@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/d4fa596027.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        #screen {
+            width: 100%;
+            height: 2000px;
+            border: 5px solid red;
+        }
+
+        #bars {
+            display: none;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            height: 80px;
+            border: 1px solid white;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        #logo {
+            padding-top: 30px;
+            /* border: 2px solid white; */
+            width: 25%;
+        }
+
+        #logo>p:nth-child(2) {
+            display: none;
+        }
+
+        #navigations {
+            padding-top: 30px;
+            /* border: 2px solid white; */
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #socialNetworks {
+            padding-top: 30px;
+            /* border: 2px solid white; */
+            width: 25%;
+            display: flex;
+            justify-content: end;
+            /* - align Horizontally */
+            /* align-items: end; - align vertically */
+        }
+
+        #socialNetworks>div {
+            margin-left: 20px;
+        }
+
+
+        @media screen and (max-width : 990px) {
+            #logo {
+                margin-left: 20px;
+            }
+
+            #logo>p:nth-child(1) {
+                display: none;
+            }
+
+            #logo>p:nth-child(2) {
+                display: block;
+            }
+
+            #navigations {
+                display: none;
+            }
+
+            #socialNetworks {
+                display: none;
+            }
+
+            #navbar {
+                justify-content: space-between;
+            }
+
+            #bars {
+                margin-right: 30px;
+                padding-top: 30px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div id="logo">
+                <p>Tech Blog</p>
+                <p>Mobile View</p>
+            </div>
+            <div id="navigations">
+                <div>Home</div>
+                <div>Blog</div>
+                <div>Articles</div>
+                <div>About Us</div>
+                <div>FAQ</div>
+            </div>
+            <div id="socialNetworks">
+                <div><i class="fa-brands fa-facebook-f fa-l"></i></div>
+                <div><i class="fa-brands fa-twitter fa-l"></i></div>
+                <div><i class="fa-brands fa-instagram fa-l"></i></div>
+            </div>
+            <div id="bars"><i class="fa-solid fa-bars fa-xl"></i></div>
+        </div>
+        <div id="home">Home</div>
+    </div>
+
+</body>
+
+</html>
