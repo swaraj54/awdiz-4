@@ -26,9 +26,9 @@ if (age > 18) {
 }
 
 
-// =
-// ==
-// ===
+=
+==
+===
 
 // =
 // Value assign
@@ -137,10 +137,12 @@ console.log(num)
 //     console.log()
 // }
 
-for (var i = 1; i <= 100; i = i + 4) {
+
+for (var i = 1; i <= 100; i = i + 1) {
     console.log(i)
     // i = i + 1
 }
+
 // 1st Iteration : i = 1,  1 <= 10 - true, log(1), i = 1 + 1 , i = 2
 // 2nd Iteration : i = 2,  2 <= 10 - true, log(2), i = 2 + 1 , i = 3
 // 3rd Iteration : i = 3,  3 <= 10 - true, log(3), i = 3 + 1 , i = 4
