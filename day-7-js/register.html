@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <form onsubmit="register(event)">
+        <label>Name </label><br />
+        <input type="text" id="name" /><br />
+        <label>Email </label><br />
+        <input type="email" id="email" /><br />
+        <label>Password </label><br />
+        <input type="password" id="password" /><br />
+        <label>Confirm Password </label><br />
+        <input type="password" id="confirmpassword" /><br />
+        <input type="submit" value="Register" /><br />
+    </form>
+    <button onclick="getusers()">Get users</button>
+
+    <script>
+        function register(event) {
+            event.preventDefault();
+            // console.log("INside form function")
+            const userName = document.getElementById("name").value;
+            const userEmail = document.getElementById('email').value;
+            const userPassword = document.getElementById("password").value;
+            const userConfirmPassword = document.getElementById("confirmpassword").value;
+            console.log(userName, userEmail, userPassword)
+            if (userName && userEmail && userPassword && userConfirmPassword) {
+                if (userPassword === userConfirmPassword) {
+                    // alert("Pass and con pass matched,,")
+                    const userObject = { email: userEmail, name: userName, password: userPassword }
+
+                    var array = JSON.parse(localStorage.getItem("users")) || [];
+                    // console.log(array, "-check here")
+                    array.push(userObject)
+
+                    localStorage.setItem("users", JSON.stringify(array))
+
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("password").value = "";
+                    document.getElementById("confirmpassword").value = "";
+
+
+                    alert("Register Succees..")
+                } else {
+                    alert("Password and Confirm not matched,,,")
+                }
+
+
+            } else {
+                alert("All fields are mandtory...")
+            }
+        }
+        function getusers() {
+            var users = JSON.parse(localStorage.getItem("users"));
+            console.log(users)
+        }
+    </script>
+</body>
+
+</html>
