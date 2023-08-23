@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+
 <body>
-    <form>
-        <label>Email</label><br/>
-        <input /><br/>
-        <label>Password</label><br/>
-        <input /><br/>
-        <input type="submit" /><br/>
-    </form>
-    
+    <button onclick="getData()">GET LS DATA ON LOGIN PAGE</button>
+    <script>
+        function getData() {
+            const users = JSON.parse(localStorage.getItem("users"))
+            console.log(users, "- users in login page")
+            // for (var i = 0; i < users.length; i++) {
+
+            // }
+        }
+    </script>
 </body>
+
 </html>

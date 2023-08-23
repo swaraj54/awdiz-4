@@ -29,17 +29,28 @@
             const userEmail = document.getElementById('email').value;
             const userPassword = document.getElementById("password").value;
             const userConfirmPassword = document.getElementById("confirmpassword").value;
-            console.log(userName, userEmail, userPassword)
+            // console.log(userName, userEmail, userPassword)
             if (userName && userEmail && userPassword && userConfirmPassword) {
                 if (userPassword === userConfirmPassword) {
                     // alert("Pass and con pass matched,,")
                     const userObject = { email: userEmail, name: userName, password: userPassword }
 
-                    var array = JSON.parse(localStorage.getItem("users")) || [];
+                    var array = JSON.parse(localStorage.getItem("users")) || []; //array = [{ abc }]
                     // console.log(array, "-check here")
-                    array.push(userObject)
 
-                    localStorage.setItem("users", JSON.stringify(array))
+                    for (var i = 0; i < array.length; i++) {
+                        // console.log(array[i],`- user ${i}`)
+                        // console.log(array[i].email,`- user ${i}`)
+                        if (array[i].email === userEmail ) {
+                            return alert("Email is already exist, try different email.")
+                        } 
+                        // if(array[i].number === userNumber){}
+
+                    }
+
+                    array.push(userObject) //[{ abc }, { xyz }, { pqr }]
+
+                    localStorage.setItem("users", JSON.stringify(array)) //[{ abc }, { xyz }, { pqr }]
 
                     document.getElementById("name").value = "";
                     document.getElementById("email").value = "";
