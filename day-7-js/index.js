@@ -42,12 +42,36 @@
 // localStorage.removeItem(JSON.stringify(key))
 
 
-const array = [];
+// const array = [];
 
-array.push("ytguhij")
-array.push("abc")
-array.push("xyz")
-array.push(87654)
-array.push({ hi: "hello" })
+// array.push("ytguhij")
+// array.push("abc")
+// array.push("xyz")
+// array.push(87654)
+// array.push({ hi: "hello" })
 
-console.log(array, "- array")
+// console.log(array, "- array")
+
+
+
+// setTimeout(function () {
+//     console.log("Logged after 3 sec.")
+//     console.log("Logged after 3 sec.")
+//     console.log("Logged after 3 sec.")
+//     console.log("Logged after 3 sec.")
+//     console.log("Logged after 3 sec.")
+// }, 5000)
+
+// setInterval(function () {
+//     console.log("Logged in interval after 3 sec")
+//     console.log("Logged in interval after 3 sec")
+//     console.log("Logged in interval after 3 sec")
+// }, 3000)
+
+// function myfunction() { }
+
+// const mysecondfunction = () => { }
+// const singlePropFunction = event = {}
+// const thridFunction = number => { return number * 3 }
+
+// console.log(thridFunction(4))

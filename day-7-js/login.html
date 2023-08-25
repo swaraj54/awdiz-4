@@ -8,15 +8,50 @@
 </head>
 
 <body>
-    <button onclick="getData()">GET LS DATA ON LOGIN PAGE</button>
+    <div>
+        <form onsubmit="login(event)">
+            <label>Email</label><br />
+            <input type="email" id="email" /><br />
+            <label>Password</label><br />
+            <input type="password" id="password" /><br />
+            <input type="submit" value="Login" /><br />
+        </form>
+    </div>
     <script>
-        function getData() {
-            const users = JSON.parse(localStorage.getItem("users"))
-            console.log(users, "- users in login page")
-            // for (var i = 0; i < users.length; i++) {
+        function login(event) {
+            event.preventDefault();
 
-            // }
+            //html to js
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            console.log(email, password, " - emial , password")
+
+            if (email && password) {
+                // localstorage to js
+                var users = JSON.parse(localStorage.getItem("users"));
+                console.log(users, "-users here")
+
+                for (var i = 0; i < users.length; i++) {
+                    // console.log(users[i], `- single user - ${i}`)
+                    // console.log(users[i].email, `- single user email - ${i}`)
+                    // console.log(users[i].email, users[i].password, `- single user email, password - ${i}`)
+                    if (users[i].email === email && users[i].password === password) {
+                        document.getElementById("email").value = "";
+                        document.getElementById("password").value = "";
+                        window.location.href = "./home.html"
+                        return alert("Login successfull.")
+                    }
+                }
+
+                return alert("Email and password not matched.")
+
+
+            } else {
+                alert('all fields are mandtory..')
+            }
+
         }
+
     </script>
 </body>
 
