@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+
+<body>
+    <form onsubmit="addProduct(event)">
+        <label>Product Name</label><br />
+        <input type="text" placeholder="Type product name.." id="pname" /><br />
+        <label>Product Price</label><br />
+        <input type="number" placeholder="Type product price.." id="pprice" /><br />
+        <label>Product Image</label><br />
+        <input type="text" placeholder="Paste url of product image.." id="pimage" /><br />
+        <input type="submit" value="Add Product" />
+    </form>
+
+    <script>
+        function addProduct(event) {
+            event.preventDefault();
+            var name = document.getElementById("pname").value;
+            var price = document.getElementById("pprice").value;
+            var image = document.getElementById("pimage").value;
+            console.log(name, "-name", price, "-price", image, "image")
+            if (name && price && image) {
+                var productsArray = JSON.parse(localStorage.getItem("AllProducts")) || [];
+                productsArray.push({ name, price, image })
+                localStorage.setItem("AllProducts", JSON.stringify(productsArray))
+                document.getElementById("pname").value = "";
+                document.getElementById("pprice").value = "";
+                document.getElementById("pimage").value = ""
+                alert("Product added successfully.")
+            } else {
+                alert("All fields are mandtory..")
+            }
+        }
+    </script>
+</body>
+
+</html>
