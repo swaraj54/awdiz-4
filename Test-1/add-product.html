@@ -15,6 +15,12 @@
         <input type="number" placeholder="Type product price.." id="pprice" /><br />
         <label>Product Image</label><br />
         <input type="text" placeholder="Paste url of product image.." id="pimage" /><br />
+        <input type="checkbox" id="myCheck" />
+        <p>Accept terms and conditions.</p>
+        <input type="radio" value="Apple" class="myRadio"  /><label>Apple</label>
+        <!-- <input type="radio" value="Banana" class="myRadio" /><label>Banana</label>
+        <input type="radio" value="Grape" class="myRadio" /><label>Grape</label> -->
+        <br />
         <input type="submit" value="Add Product" />
     </form>
 
@@ -24,8 +30,14 @@
             var name = document.getElementById("pname").value;
             var price = document.getElementById("pprice").value;
             var image = document.getElementById("pimage").value;
-            console.log(name, "-name", price, "-price", image, "image")
-            if (name && price && image) {
+            var checkbox = document.getElementById("myCheck")
+
+            var radioForApple = document.getElementsByClassName("myRadio")
+            console.log(radioForApple[0].checked, "radio for apple")
+
+            // console.log(checkbox.checked, "- checkbox")
+            // console.log(name, "-name", price, "-price", image, "image")
+            if (name && price && image && checkbox.checked) {
                 var productsArray = JSON.parse(localStorage.getItem("AllProducts")) || [];
                 productsArray.push({ name, price, image })
                 localStorage.setItem("AllProducts", JSON.stringify(productsArray))
